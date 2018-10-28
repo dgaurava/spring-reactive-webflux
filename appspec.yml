@@ -7,11 +7,11 @@ hooks:
   BeforeInstall:
     - location: spring-webflux-reactive/scripts/stop.sh
       timeout: 300
-      runas: root
+      runas: ec2-user
   AfterInstall:
     - location: spring-webflux-reactive/scripts/deploy.sh
       timeout: 300
-      runas: root
+      runas: ec2-user
   ApplicationStart:
     - location: spring-webflux-reactive/scripts/start.sh
       timeout: 300
