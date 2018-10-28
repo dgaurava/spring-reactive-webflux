@@ -5,15 +5,15 @@ files:
     destination: /home/ec2-user/spring-web-flux/revisions
 hooks:
   BeforeInstall:
-    - location: scripts/stop.sh
+    - location: /home/ec2-user/scripts/stop.sh
       timeout: 300
       runas: root
   AfterInstall:
-    - location: scripts/deploy.sh
+    - location: /home/ec2-user/scripts/deploy.sh
       timeout: 300
       runas: root
   ApplicationStart:
-    - location: scripts/start.sh
+    - location: /home/ec2-user/scripts/start.sh
       timeout: 300
       runas: ec2-user
       
