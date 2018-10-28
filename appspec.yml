@@ -1,19 +1,19 @@
 version: 0.0
 os: linux
 files:
-  - source: /home/ec2-user
+  - source: /
     destination: /home/ec2-user/spring-web-flux/revisions
 hooks:
   BeforeInstall:
-    - location: /home/ec2-user/scripts/stop.sh
+    - location: spring-webflux-reactive/scripts/stop.sh
       timeout: 300
       runas: root
   AfterInstall:
-    - location: /home/ec2-user/scripts/deploy.sh
+    - location: spring-webflux-reactive/scripts/deploy.sh
       timeout: 300
       runas: root
   ApplicationStart:
-    - location: /home/ec2-user/scripts/start.sh
+    - location: spring-webflux-reactive/scripts/start.sh
       timeout: 300
       runas: ec2-user
       
